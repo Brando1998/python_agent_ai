@@ -1,0 +1,51 @@
+# Bytecode y archivos temporales de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Entorno virtual
+venv/
+.env/
+.python-version
+python_agent_ai_venv/
+
+# Archivos de entorno
+.env
+.env.local
+.env.*
+
+# SQLite DB (si quieres evitar subir la base de datos local)
+*.db
+*.sqlite3
+
+# Archivos de testing y cobertura
+coverage/
+htmlcov/
+.cache/
+.tox/
+nosetests.xml
+pytest_cache/
+.pytest_cache/
+*.cover
+*.log
+
+# Archivos generados por editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de despliegue o build
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Archivos de Git
+*.orig
+
+# Pyright
+pyrightconfig.json
