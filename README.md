@@ -55,6 +55,8 @@ pip install -r requirements.txt
 ```bash
 OPENAI_API_KEY=sk-***************
 OPENAI_API_URL=https://api.openai.com/v1/chat/completions
+USE_OPENAI_MOCK=false # Simula la api de openai en desarrollo
+DATABASE_URL=sqlite:///./app.db
 ```
 
 ### 5. Ejecuta el servidor
