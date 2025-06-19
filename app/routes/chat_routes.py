@@ -1,7 +1,12 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from app.crud import get_user, save_message
-from app.openai_client import get_openai_response
+from app.config import USE_OPENAI_MOCK
+
+if USE_OPENAI_MOCK:
+    from app.openai_mock import get_openai_response
+else:
+    from app.openai_client import get_openai_response
 
 router = APIRouter()
 

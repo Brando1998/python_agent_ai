@@ -34,8 +34,7 @@ Este proyecto es una API RESTful desarrollada con **FastAPI** que simula un **ch
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu_usuario/chatbot-backend.git
-cd chatbot-backend
+git clone git@github.com:Brando1998/python_agent_ai.git
 ```
 
 ### 2. Crea y activa un entorno virtual
@@ -89,7 +88,7 @@ Incluye pruebas para:
 
     Consulta de historial
 
-    Comunicación con el chatbot (mockeada)
+    Comunicación con el chatbot 
 
 🧰 Validación de tipos con Pyright
 
@@ -105,13 +104,11 @@ pyright
 
     Modularización: rutas separadas por función (chat, user, health).
 
-    Mocking en pruebas: evita gastar tokens de OpenAI en testing.
-
     dotenv: permite mantener seguras las claves API fuera del código.
 
     httpx.AsyncClient: para integrarse bien con FastAPI y aprovechar async/await.
 
-📄 Diagrama de Secuencia (simplificado)
+📄 Diagrama de Secuencia
 
 sequenceDiagram
     participant Usuario
@@ -131,7 +128,7 @@ sequenceDiagram
 ✔️ Funcional, probado y listo para evaluación.
 👨‍💻 Autor
 
-Desarrollado por [Tu Nombre]
-[LinkedIn] - [GitHub]
+Desarrollado por Brando Diaz Montealegre
+[https://www.linkedin.com/in/brando-diaz-montealegre-93b059169/] - [https://github.com/Brando1998]
 
 📸 Ver captura de Pyright en /docs/pyright_ok.png

@@ -16,7 +16,7 @@ async def get_openai_response(prompt: str, role: str) -> str:
     }
 
     data = {
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-4o-mini",
         "messages": [
             {"role": "system", "content": f"Eres un {role}."},
             {"role": "user", "content": prompt}
