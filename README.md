@@ -103,7 +103,9 @@ Ejecutar Pyright desde la raiz del proyecto
 Pyright
 ```
 
-📸 Incluye una captura de pantalla mostrando que no hay errores de tipos.
+![📸 Incluye una captura de pantalla mostrando que no hay errores de tipos.](docs/pyright_ok.png)
+
+
 📌 Decisiones Técnicas
 
     SQLModel: facilita el trabajo con SQLite y modelos Pydantic/ORM combinados.
