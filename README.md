@@ -116,18 +116,55 @@ Pyright
 
 📄 Diagrama de Secuencia
 
-sequenceDiagram
-    participant Usuario
-    participant API
-    participant OpenAI
-    participant DB
+### 1. Crear usuario
 
-    Usuario->>API: POST /ask (username, message)
-    API->>DB: Buscar usuario
-    API->>OpenAI: Enviar mensaje con rol
-    OpenAI-->>API: Respuesta del modelo
-    API->>DB: Guardar pregunta y respuesta
-    API-->>Usuario: Devolver respuesta
+Cliente        →         API (FastAPI)         →       Base de datos
+   |                     |                               |
+   |  POST /init_user    |                               |
+   |-------------------> |                               |
+   |                     | Validar datos                 |
+   |                     | Insertar usuario              |
+   |                     |-----------------------------> |
+   |                     |     Usuario insertado         |
+   |                     |<----------------------------- |
+   |                     | Devolver respuesta JSON       |
+   | <------------------ |                               |
+
+### 2. Iniciar conversación con chatbot
+
+Cliente        →         API (FastAPI)         →     OpenAI o Mock
+   |                     |                               |
+   |  POST /chat         |                               |
+   |-------------------> |                               |
+   |                     | Validar usuario y entrada     |
+   |                     | Consultar historial previo    |
+   |                     | Generar pregunta para GPT     |
+   |                     |-----------------------------> |
+   |                     |  Recibir respuesta del bot    |
+   |                     |<----------------------------- |
+   |                     | Guardar pregunta/respuesta    |
+   |                     |-----------------------------> DB
+   |                     | Confirmación guardado         |
+   |                     |<----------------------------- |
+   |                     | Enviar respuesta al cliente   |
+   | <------------------ |                               |
+
+### 3. Consultar historial de usuario 
+
+Cliente        →         API (FastAPI)         →       Base de datos
+   |                     |                               |
+   |  GET /history/pedro |                               |
+   |-------------------> |                               |
+   |                     | Verificar si usuario existe   |
+   |                     | Consultar historial           |
+   |                     |-----------------------------> |
+   |                     | Historial encontrado/lista    |
+   |                     |<----------------------------- |
+   |                     | Devolver historial JSON       |
+   | <------------------ |                               |
+
+
+
 
 ✅ Estado del Proyecto
 
