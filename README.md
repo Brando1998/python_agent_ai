@@ -78,11 +78,13 @@ uvicorn app.main:app --reload
 
 
 🧪 Pruebas
-Ejecutar pruebas unitarias
+Ejecutar pruebas unitarias desde la raíz del proyecto ejecutar:
 
 ```bash
 pytest
 ```
+
+NOTA: Antes de ejecutar el test es necesario acceder a test_user.py y cambiar la variable username = ""
 
 Incluye pruebas para:
 
@@ -95,7 +97,7 @@ Incluye pruebas para:
 🧰 Validación de tipos con Pyright
 
 Este proyecto es compatible con Pyright para asegurar calidad de tipos estáticos.
-Ejecutar Pyright
+Ejecutar Pyright desde la raiz del proyecto
 
 ```bash
 Pyright

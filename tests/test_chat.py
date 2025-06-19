@@ -7,17 +7,17 @@ client = TestClient(app)
 
 
 def setup_module(module):
-    # Inicializa la BD y crea un usuario de prueba
+    # Create user in db
     init_db()
     client.post("/init_user", json={
-        "username": "usuario_chat",
+        "username": "lucas",
         "role": "experto en riesgos laborales"
     })
 
 
 def test_ask_question():
     response = client.post("/ask", json={
-        "username": "usuario_chat",
+        "username": "lucas",
         "message": "¿Qué es un riesgo laboral?"
     })
     print(response.json())
