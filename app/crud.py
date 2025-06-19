@@ -27,3 +27,27 @@ def get_user(username: str) -> User | None:
         statement = select(User).where(User.username == username)
         return session.exec(statement).first()
 
+
+# ---------------------
+# Messages / History
+# ---------------------
+
+def save_message(username: str, question: str, response: str) -> Message:
+    """
+    Save question and response
+    """
+    with Session(engine) as session:
+        msg = Message(username=username, question=question, response=response)
+        session.add(msg)
+        session.commit()
+        session.refresh(msg)
+        return msg
+
+
+def get_user_history(username: str) -> list[Message]:
+    """
+    Get chat history
+    """
+    with Session(engine) as session:
+        statement = select(Message).where(Message.username == username)
+        return list(session.exec(statement))
