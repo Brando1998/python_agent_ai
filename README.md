@@ -139,7 +139,7 @@ sequenceDiagram
     OpenAI-->>API: Respuesta generada
     API->>DB: Guardar pregunta/respuesta
     API-->>Cliente: Respuesta del chatbot
-
+```
 
 ✅ Estado del Proyecto
 
