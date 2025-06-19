@@ -80,7 +80,9 @@ uvicorn app.main:app --reload
 🧪 Pruebas
 Ejecutar pruebas unitarias
 
-pytest tests/
+```bash
+pytest
+```
 
 Incluye pruebas para:
 
@@ -95,7 +97,9 @@ Incluye pruebas para:
 Este proyecto es compatible con Pyright para asegurar calidad de tipos estáticos.
 Ejecutar Pyright
 
-pyright
+```bash
+Pyright
+```
 
 📸 Incluye una captura de pantalla mostrando que no hay errores de tipos.
 📌 Decisiones Técnicas
